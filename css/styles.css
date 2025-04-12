@@ -1,23 +1,14 @@
-/*
-  Estilos inspirados em um layout profissional e minimalista,
-  como o site da Apple:
-  - Fundo branco, tipografia limpa
-  - Destaques sutis em cinza ou azul discreto
-  - Espaçamento generoso
-  - Foco no produto: cartões com fundo branco e sombras sutis
-*/
-
-/* Paleta de cores neutras */
+/* Paleta de cores e variáveis */
 :root {
-  --primary-color: #007aff;       /* Azul discreto, como destaque */
-  --text-color: #333333;          /* Texto principal em tom de cinza-escuro */
-  --heading-color: #000000;       /* Títulos em preto */
-  --bg-color: #ffffff;            /* Fundo branco */
-  --border-color: #dddddd;        /* Bordas e divisões */
-  --secondary-bg-color: #f9f9f9;  /* Fundo de seções secundárias */
+  --primary-color: #007aff;
+  --text-color: #333333;
+  --heading-color: #000000;
+  --bg-color: #ffffff;
+  --border-color: #dddddd;
+  --secondary-bg-color: #f9f9f9;
 }
 
-/* Reset básico */
+/* Reset e tipografia */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -25,13 +16,15 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Você pode trocar para 'Helvetica', 'Arial', etc. */
+  /* Uso da fonte Italianne para efeito itálico/inclinado */
+  font-family: 'Italianno', cursive, 'Roboto', sans-serif;
+  font-style: italic;
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
 }
 
-/* Cabeçalho e barra de navegação */
+/* Navbar */
 .header, .navbar {
   display: flex;
   align-items: center;
@@ -41,12 +34,18 @@ body {
 }
 
 .logo {
-  font-family: 'Oswald', sans-serif; /* Caso queira títulos mais marcantes */
   font-size: 1.5rem;
   color: var(--heading-color);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 .nav-menu {
@@ -68,14 +67,41 @@ body {
   color: var(--primary-color);
 }
 
-/* Seção Hero */
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-container input {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px 0 0 4px;
+}
+
+.search-container button {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: #005bb5;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
+  background: url('../images/hero-background.jpg') no-repeat center center/cover; /* Opcional: background com efeito parallax */
 }
 
 .hero h1 {
-  font-family: 'Oswald', sans-serif;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--heading-color);
@@ -88,11 +114,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
-  color: #666666; /* Cinza mais claro para contraste */
+  color: #666666;
 }
 
 .btn {
-  font-family: 'Oswald', sans-serif;
   background-color: var(--primary-color);
   border: none;
   padding: 0.75rem 1.5rem;
@@ -104,10 +129,59 @@ body {
 }
 
 .btn:hover {
-  background-color: #005bb5; /* Escurece um pouco o azul */
+  background-color: #005bb5;
 }
 
-/* Conteúdo Dinâmico Geral */
+/* Seção de Promoções e Carousel */
+.promotions {
+  padding: 2rem;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+.carousel .slide {
+  min-width: 100%;
+  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel .slide img {
+  max-width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.carousel-btn {
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+#prevSlide {
+  left: 10px;
+}
+
+#nextSlide {
+  right: 10px;
+}
+
+/* Conteúdo Dinâmico e Cards */
 .dynamic-content {
   padding: 2rem;
 }
@@ -115,20 +189,17 @@ body {
 .dynamic-content h2 {
   margin-bottom: 1.5rem;
   color: var(--heading-color);
-  font-family: 'Oswald', sans-serif;
   font-size: 1.8rem;
 }
 
-/* Cards de Produtos (inspirados no estilo clean da Apple) */
-.products-showcase {
+.games-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-top: 2rem;
 }
 
-.product-card {
+.game, .product-card {
   background: #ffffff;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -138,31 +209,18 @@ body {
   transition: box-shadow 0.3s, transform 0.3s;
 }
 
-.product-card:hover {
+.game:hover, .product-card:hover {
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
   transform: translateY(-3px);
 }
 
-.product-card img {
+.game img, .product-card img {
   max-width: 100%;
   border-radius: 4px;
   margin-bottom: 1rem;
 }
 
-.product-card h3 {
-  font-family: 'Oswald', sans-serif;
-  color: var(--heading-color);
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.product-card p {
-  margin-bottom: 1rem;
-  line-height: 1.4;
-  color: #666666;
-}
-
-/* Seções de notícias / reviews */
+/* Artigos de Notícias e Reviews */
 .news-article, .review {
   background: #ffffff;
   border: 1px solid var(--border-color);
@@ -174,10 +232,9 @@ body {
 .news-article h3, .review h3 {
   margin-bottom: 0.5rem;
   color: var(--heading-color);
-  font-family: 'Oswald', sans-serif;
 }
 
-/* Galeria de imagens e vídeos */
+/* Galeria */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -223,31 +280,37 @@ form input, form textarea {
 form button {
   background-color: var(--primary-color);
   color: #ffffff;
-  font-weight: bold;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
-  font-family: 'Oswald', sans-serif;
+  transition: background-color 0.3s;
 }
 
 form button:hover {
   background-color: #005bb5;
 }
 
-/* Seção de comunidade / qualquer outra */
-.community {
-  margin: 2rem;
-  text-align: center;
-}
-
-/* Rodapé */
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: var(--secondary-bg-color);
   border-top: 1px solid var(--border-color);
   margin-top: 2rem;
+}
+
+/* Banner de Cookie Consent */
+.cookie-consent {
+  background: #f1f1f1;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Modal */
@@ -274,7 +337,7 @@ footer {
   position: relative;
 }
 
-.close {
+.close, .close-newsletter {
   color: #666666;
   float: right;
   font-size: 1.5rem;
@@ -285,8 +348,23 @@ footer {
   right: 15px;
 }
 
-.close:hover {
+.close:hover, .close-newsletter:hover {
   color: #000000;
+}
+
+/* Botão Back to Top */
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 /* Responsividade */
@@ -300,12 +378,12 @@ footer {
     font-size: 2rem;
   }
   
-  .products-showcase {
+  .games-container, .promotions-list {
     flex-direction: column;
     align-items: center;
   }
-
-  .product-card {
+  
+  .game, .product-card {
     width: 80%;
     margin: 0 auto;
   }
