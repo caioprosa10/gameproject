@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Gallery - GameVerse Hub</title>
+  <meta name="description" content="Screenshots, trailers, and clips from the latest games">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">GameVerse Hub</a>
+      <ul class="nav-menu">
+        <li><a href="news.html">News & Releases</a></li>
+        <li><a href="reviews.html">Reviews & Analyses</a></li>
+        <li><a href="gallery.html" class="active">Media Gallery</a></li>
+        <li><a href="contact.html">Contact & Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Media Gallery</h1>
+
+    <div class="gallery">
+      <!-- Exemplo de imagens com lazy loading -->
+      <figure>
+        <img src="images/sample1.jpg" alt="Screenshot 1" loading="lazy">
+        <figcaption>Screenshot 1</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sample2.jpg" alt="Screenshot 2" loading="lazy">
+        <figcaption>Screenshot 2</figcaption>
+      </figure>
+      <figure>
+        <img src="images/sample3.jpg" alt="Screenshot 3" loading="lazy">
+        <figcaption>Screenshot 3</figcaption>
+      </figure>
+    </div>
+
+    <div class="gallery">
+      <!-- Exemplo de trailer/iframe com lazy loading -->
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/someTrailer" 
+        title="Game Trailer" 
+        frameborder="0" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
