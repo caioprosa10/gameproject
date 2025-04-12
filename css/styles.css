@@ -1,0 +1,329 @@
+/*
+  Estilos inspirados em uma vibe "synthwave"/"vaporwave",
+  agora aproveitando referências do design clean do PS5:
+  - Layout centralizado com foco em produtos/console
+  - Cartões translúcidos que lembram o contraste do PS5 (branco/preto)
+  - Manutenção de gradiente roxo, rosa e ciano neon
+  - Tipografia com Oswald (títulos) e Roboto (corpo)
+*/
+
+:root {
+  --primary-color: #ff0080;      /* Rosa neon */
+  --secondary-color: #05dfd7;    /* Ciano neon */
+  --bg-gradient-start: #2b0442;  /* Roxo profundo */
+  --bg-gradient-end: #7209b7;    /* Roxo mais claro */
+  --text-color: #fff;            /* Texto branco */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  min-height: 100vh;
+  position: relative; /* Para possíveis elementos decorativos absolutos */
+}
+
+/* Exemplo de “faixa” sutil no background, lembrando curvas do PS5 */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.05); /* Camada clarinha */
+  transform: skewX(-15deg);
+  pointer-events: none;
+}
+
+/* Cabeçalho e barra de navegação */
+.header, .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: relative; 
+  z-index: 10; /* Para ficar acima do pseudo-elemento do body */
+}
+
+.logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.nav-menu li a:hover, 
+.nav-menu li a.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+/* Seção Hero */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative; 
+  z-index: 10;
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #d1006d;
+}
+
+/* Conteúdo Dinâmico Geral */
+.dynamic-content {
+  padding: 2rem;
+  position: relative; 
+  z-index: 10;
+}
+
+.dynamic-content h2 {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Conteiner de produtos/“cards” inspirado no layout PS5 */
+.products-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.1); /* Efeito translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.4); /* Rosa neon sutil */
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--secondary-color); /* Destaque ciano neon */
+}
+
+.product-card h3 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Seção de jogos ou vitrine de produtos em destaque */
+.games-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Artigos de notícias e reviews */
+.news-article, .review {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  position: relative; 
+  z-index: 10;
+}
+
+/* Galeria de imagens e vídeos */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.gallery figure {
+  max-width: 300px;
+  text-align: center;
+}
+
+.gallery img,
+.gallery iframe {
+  max-width: 100%;
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input, 
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+}
+
+form button {
+  background-color: var(--secondary-color);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Comunidade / Área centralizada */
+.community {
+  margin: 2rem;
+  text-align: center;
+  position: relative; 
+  z-index: 10;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.3);
+  margin-top: 2rem;
+  position: relative; 
+  z-index: 10;
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #2b0442;
+  margin: 10% auto;
+  padding: 1rem;
+  border: 2px solid var(--primary-color);
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.close {
+  color: #fff;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  line-height: 30px;
+}
+
+.close:hover {
+  color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .games-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .products-showcase {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
