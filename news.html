@@ -6,42 +6,94 @@
   <meta name="description" content="Latest videogame news and releases">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+  <!-- CSS principal (inspirado no estilo Apple) -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <a href="index.html" class="logo">GameVerse Hub</a>
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="images/gameversehub_logo.jpg" alt="GameVerse Hub Logo" class="logo-img">
+          GameVerse Hub
+        </a>
+      </div>
       <ul class="nav-menu">
         <li><a href="news.html" class="active">News & Releases</a></li>
         <li><a href="reviews.html">Reviews & Analyses</a></li>
         <li><a href="gallery.html">Media Gallery</a></li>
         <li><a href="contact.html">Contact & Community</a></li>
+        <li><a href="promotions.html">Promotions</a></li>
       </ul>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search topics: Nintendo, Sony, Microsoft...">
+        <button id="searchBtn">Search</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <h1>News & Releases</h1>
     
+    <!-- Notícia 1 -->
     <article class="news-article">
-      <h2>New Game Launch Coming Soon</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere, mauris sit amet placerat cursus, neque nibh scelerisque libero, ac convallis libero justo non eros.</p>
+      <h2>PlayStation 5 Pro Officially Announced</h2>
+      <p>
+        Sony finalmente confirmou o aguardado PS5 Pro. A nova versão do console promete melhorias
+        robustas em ray tracing, performance 4K mais estável e um DualSense repaginado com feedback 
+        tátil aprimorado. As pré-vendas devem começar em breve, com lançamento previsto para o final 
+        do ano. O mercado especula um salto considerável no poder de processamento, tornando ainda 
+        mais realista a próxima geração de jogos.
+      </p>
     </article>
 
+    <!-- Notícia 2 -->
     <article class="news-article">
-      <h2>Industry Event Announced</h2>
-      <p>Praesent scelerisque magna id eros faucibus, id pellentesque lorem condimentum. Vestibulum non pharetra velit, a gravida ante.</p>
+      <h2>Nintendo Reveals Switch 2</h2>
+      <p>
+        Em um Nintendo Direct surpresa, a Big N anunciou oficialmente o Nintendo Switch 2, trazendo
+        melhorias significativas: tela OLED de maior tamanho, resolução 4K quando acoplado ao dock e 
+        retrocompatibilidade para todos os jogos do primeiro Switch. Rumores indicam que o 
+        lançamento pode ocorrer em meados de 2025, mas a Nintendo ainda não divulgou preços ou 
+        datas específicas.
+      </p>
     </article>
     
-    <!-- Mais artigos de exemplo -->
+    <!-- Notícia 3 -->
+    <article class="news-article">
+      <h2>Xbox Series Y Rumors Spark Excitement</h2>
+      <p>
+        Fontes próximas à Microsoft indicam que um novo console, codinome "Project Y", pode estar em 
+        desenvolvimento para suceder a atual linha Xbox Series X|S. Os rumores apontam para um SSD 
+        ainda mais rápido, design totalmente digital (sem leitor de discos) e tecnologias de 
+        streaming integradas. Embora a empresa não tenha se pronunciado, analistas apostam em um 
+        anúncio formal no próximo ano.
+      </p>
+    </article>
+
+    <!-- Notícia 4 -->
+    <article class="news-article">
+      <h2>E3 2025: Grande Retorno em Formato Presencial</h2>
+      <p>
+        Após anos de eventos online, a E3 anunciou que a edição de 2025 voltará a receber o público
+        em Los Angeles. Grandes estúdios como Ubisoft, EA e Square Enix já confirmaram presença, e 
+        as expectativas são altas para demonstrações de jogos inéditos. O evento também contará com 
+        painéis ao vivo, campeonatos de eSports e diversos stands interativos.
+      </p>
+    </article>
+
   </main>
 
   <footer>
     <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+    <!-- Banner de consentimento de cookies (seu script.js irá gerenciar) -->
+    <div id="cookieConsent" class="cookie-consent">
+      <p>This website uses cookies to ensure you get the best experience.</p>
+      <button id="acceptCookies">Accept</button>
+    </div>
   </footer>
 
+  <!-- Script principal com funcionalidades -->
   <script src="js/script.js"></script>
 </body>
 </html>
