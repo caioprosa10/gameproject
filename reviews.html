@@ -5,45 +5,115 @@
   <title>Reviews & Analyses - GameVerse Hub</title>
   <meta name="description" content="Articles and videos featuring game reviews, pros, cons, and gameplay tips">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS principal (inspirado no estilo Apple) -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <a href="index.html" class="logo">GameVerse Hub</a>
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="images/gameversehub_logo.jpg" alt="GameVerse Hub Logo" class="logo-img">
+          GameVerse Hub
+        </a>
+      </div>
       <ul class="nav-menu">
         <li><a href="news.html">News & Releases</a></li>
         <li><a href="reviews.html" class="active">Reviews & Analyses</a></li>
         <li><a href="gallery.html">Media Gallery</a></li>
         <li><a href="contact.html">Contact & Community</a></li>
+        <li><a href="promotions.html">Promotions</a></li>
       </ul>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search topics: Nintendo, Sony, Microsoft...">
+        <button id="searchBtn">Search</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <h1>Reviews & Analyses</h1>
 
+    <!-- Review 1 -->
     <section class="review">
-      <h2>Game X Review</h2>
-      <p><strong>Pros:</strong> Excellent story, immersive gameplay.</p>
-      <p><strong>Cons:</strong> Occasional frame drops in crowded areas.</p>
+      <h2>The Legend of Zelda: Tears of the Kingdom</h2>
+      <p>
+        <strong>Pros:</strong> Expansive open world, novas mecânicas criativas, evolução direta de 
+        Breath of the Wild e belos cenários que incentivam a exploração.
+      </p>
+      <p>
+        <strong>Cons:</strong> Quedas de performance ocasionais em áreas densas, poucas mudanças nas 
+        side-quests tradicionais.
+      </p>
+      <p>
+        Apesar de alguns tropeços, trata-se de uma evolução satisfatória para o universo de Zelda, 
+        mantendo a essência da franquia e adicionando camadas de complexidade ao gameplay.
+      </p>
     </section>
 
+    <!-- Review 2 -->
     <section class="review">
-      <h2>Game Y Review</h2>
-      <p><strong>Pros:</strong> Beautiful art style, great soundtrack.</p>
-      <p><strong>Cons:</strong> Limited character customization.</p>
+      <h2>Starfield</h2>
+      <p>
+        <strong>Pros:</strong> Universo vasto para exploração, narrativa envolvente, opções 
+        diversificadas de customização de personagem e naves.
+      </p>
+      <p>
+        <strong>Cons:</strong> Tempos de loading podem ser frequentes, alguns NPCs não possuem 
+        animações faciais tão polidas.
+      </p>
+      <p>
+        É um sandbox espacial que agrada aos fãs de ficção científica, mas ainda carece de patches 
+        de otimização para garantir desempenho fluido em todos os sistemas.
+      </p>
+    </section>
+
+    <!-- Review 3 -->
+    <section class="review">
+      <h2>Final Fantasy XVI</h2>
+      <p>
+        <strong>Pros:</strong> Combate reimaginado em tempo real, história sombria e épica, 
+        excelente trilha sonora que casa bem com o tom do jogo.
+      </p>
+      <p>
+        <strong>Cons:</strong> Foco quase total no protagonista, pouca atenção a party members e 
+        leve sensação de linearidade em algumas partes.
+      </p>
+      <p>
+        Uma renovação corajosa da fórmula tradicional de Final Fantasy, com ênfase na ação e em 
+        Summons gigantescas. Os fãs de RPGs de ação vão se sentir em casa.
+      </p>
+    </section>
+
+    <!-- Review 4 -->
+    <section class="review">
+      <h2>Forza Motorsport</h2>
+      <p>
+        <strong>Pros:</strong> Visualmente impressionante, ampla variedade de carros licenciados, 
+        sistema de física realista e multiplayer robusto.
+      </p>
+      <p>
+        <strong>Cons:</strong> Modo carreira um pouco repetitivo, alta curva de aprendizado para 
+        jogadores casuais.
+      </p>
+      <p>
+        Para quem busca uma experiência de corrida mais simulada no Xbox, Forza Motorsport entrega 
+        fidelidade técnica e muitos recursos, mas exige certa dedicação para dominar as pistas.
+      </p>
     </section>
     
-    <!-- Adicione quantos reviews desejar -->
   </main>
 
   <footer>
     <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+    <div id="cookieConsent" class="cookie-consent">
+      <p>This website uses cookies to ensure you get the best experience.</p>
+      <button id="acceptCookies">Accept</button>
+    </div>
   </footer>
 
+  <!-- Script principal com funcionalidades -->
   <script src="js/script.js"></script>
 </body>
 </html>
