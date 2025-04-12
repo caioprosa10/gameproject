@@ -5,15 +5,12 @@
   <title>GameVerse Hub</title>
   <meta name="description" content="An interactive hub for videogame enthusiasts">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Fonts: Italianno (para um efeito cursivo/inclinado) e Roboto Italic -->
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
+
+  <!-- Usando o font stack inspirado no estilo Apple -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Cabeçalho com logo e barra de navegação -->
   <header class="header">
     <nav class="navbar">
       <div class="logo-container">
@@ -29,7 +26,7 @@
         <li><a href="contact.html">Contact & Community</a></li>
         <li><a href="promotions.html">Promotions</a></li>
       </ul>
-      <!-- Search bar com tópicos -->
+      <!-- Barra de pesquisa com tópicos -->
       <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search topics: Nintendo, Sony, Microsoft...">
         <button id="searchBtn">Search</button>
@@ -37,15 +34,16 @@
     </nav>
   </header>
 
+  <!-- Conteúdo Principal -->
   <main>
-    <!-- Hero section com efeito parallax -->
+    <!-- Seção Hero com imagem de fundo (opcional) e efeito parallax -->
     <section class="hero" id="heroSection">
       <h1>Welcome to GameVerse Hub</h1>
       <p>Your ultimate destination for gaming news, reviews, and more!</p>
       <button class="btn" id="showTrailerBtn">View Featured Trailer</button>
     </section>
 
-    <!-- Seção de Promoções com carousel -->
+    <!-- Seção de Promoções com Carousel -->
     <section class="promotions" id="promotionsSection">
       <h2>Current Promotions</h2>
       <div class="carousel" id="promoCarousel">
@@ -70,7 +68,7 @@
       <button class="carousel-btn" id="nextSlide">&gt;</button>
     </section>
 
-    <!-- Seção dinâmica com dados de API -->
+    <!-- Seção dinâmica com dados de API (ex.: jogos em destaque) -->
     <section class="dynamic-content" id="apiData">
       <h2>Featured Games</h2>
       <div class="games-container" id="gamesContainer">
@@ -79,9 +77,9 @@
     </section>
   </main>
 
+  <!-- Rodapé com informações e banner de consentimento de cookies -->
   <footer>
     <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
-    <!-- Banner de Consentimento de Cookies -->
     <div id="cookieConsent" class="cookie-consent">
       <p>This website uses cookies to ensure you get the best experience.</p>
       <button id="acceptCookies">Accept</button>
@@ -115,10 +113,10 @@
     </div>
   </div>
 
-  <!-- Botão Voltar ao Topo -->
+  <!-- Botão de Voltar ao Topo -->
   <button id="backToTop" class="back-to-top">↑</button>
 
-  <!-- JavaScript -->
+  <!-- Inclusão do JavaScript com funcionalidades aprimoradas -->
   <script src="js/script.js"></script>
 </body>
 </html>
