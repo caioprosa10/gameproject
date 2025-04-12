@@ -5,60 +5,118 @@
   <title>GameVerse Hub</title>
   <meta name="description" content="An interactive hub for videogame enthusiasts">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Fonte Oswald e Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts: Italianno (para um efeito cursivo/inclinado) e Roboto Italic -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <a href="index.html" class="logo">GameVerse Hub</a>
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="images/gameversehub_logo.jpg" alt="GameVerse Hub Logo" class="logo-img">
+          GameVerse Hub
+        </a>
+      </div>
       <ul class="nav-menu">
         <li><a href="news.html">News & Releases</a></li>
         <li><a href="reviews.html">Reviews & Analyses</a></li>
         <li><a href="gallery.html">Media Gallery</a></li>
         <li><a href="contact.html">Contact & Community</a></li>
+        <li><a href="promotions.html">Promotions</a></li>
       </ul>
+      <!-- Search bar com tópicos -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search topics: Nintendo, Sony, Microsoft...">
+        <button id="searchBtn">Search</button>
+      </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <!-- Hero section com efeito parallax -->
+    <section class="hero" id="heroSection">
       <h1>Welcome to GameVerse Hub</h1>
       <p>Your ultimate destination for gaming news, reviews, and more!</p>
       <button class="btn" id="showTrailerBtn">View Featured Trailer</button>
     </section>
 
-    <!-- Exemplo de seção dinâmica com dados de API -->
+    <!-- Seção de Promoções com carousel -->
+    <section class="promotions" id="promotionsSection">
+      <h2>Current Promotions</h2>
+      <div class="carousel" id="promoCarousel">
+         <div class="slide">
+           <img src="images/nintendo_switch2.jpg" alt="Nintendo Switch 2">
+           <a href="https://example.com/nintendo-switch2" target="_blank">Buy Nintendo Switch 2</a>
+         </div>
+         <div class="slide">
+           <img src="images/ps5_pro.jpg" alt="PS5 Pro">
+           <a href="https://example.com/ps5-pro" target="_blank">Buy PS5 Pro</a>
+         </div>
+         <div class="slide">
+           <img src="images/xbox_series_x.jpg" alt="Xbox Series X">
+           <a href="https://example.com/xbox-series-x" target="_blank">Buy Xbox Series X</a>
+         </div>
+         <div class="slide">
+           <img src="images/xbox_series_s.jpg" alt="Xbox Series S">
+           <a href="https://example.com/xbox-series-s" target="_blank">Buy Xbox Series S</a>
+         </div>
+      </div>
+      <button class="carousel-btn" id="prevSlide">&lt;</button>
+      <button class="carousel-btn" id="nextSlide">&gt;</button>
+    </section>
+
+    <!-- Seção dinâmica com dados de API -->
     <section class="dynamic-content" id="apiData">
       <h2>Featured Games</h2>
       <div class="games-container" id="gamesContainer">
-        <!-- Aqui o JavaScript exibirá dados vindos de um fetch para uma API de jogos. -->
+        <!-- Conteúdo dinâmico gerado via JavaScript -->
       </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+    <!-- Banner de Consentimento de Cookies -->
+    <div id="cookieConsent" class="cookie-consent">
+      <p>This website uses cookies to ensure you get the best experience.</p>
+      <button id="acceptCookies">Accept</button>
+    </div>
   </footer>
 
-  <!-- Modal: exibido ao clicar no botão "View Featured Trailer" -->
+  <!-- Modal para Trailer -->
   <div id="trailerModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <!-- Exemplo de vídeo do YouTube -->
       <iframe 
         width="560" 
         height="315" 
         src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-        title="YouTube video player" 
+        title="Featured Trailer" 
         frameborder="0" 
         allowfullscreen>
       </iframe>
     </div>
   </div>
+
+  <!-- Modal para Newsletter -->
+  <div id="newsletterModal" class="modal">
+    <div class="modal-content">
+      <span class="close-newsletter">&times;</span>
+      <h2>Subscribe to our Newsletter</h2>
+      <form id="newsletterForm">
+        <input type="email" id="newsletterEmail" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="backToTop" class="back-to-top">↑</button>
 
   <!-- JavaScript -->
   <script src="js/script.js"></script>
