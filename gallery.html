@@ -5,60 +5,89 @@
   <title>Media Gallery - GameVerse Hub</title>
   <meta name="description" content="Screenshots, trailers, and clips from the latest games">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS principal (inspirado no estilo Apple) -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!--
+    Exemplo de CSS inline apenas para fins didáticos.
+    Você pode inserir essas regras em styles.css, se preferir.
+  -->
+  <style>
+    /* Ajusta a section para ocupar a tela quase inteira */
+    .media-gallery {
+      text-align: center;
+      min-height: 80vh; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .video-container {
+      width: 90vw;       /* 90% da largura da tela */
+      max-width: 1200px; /* Limite máximo de largura, se desejar */
+      height: 70vh;      /* 70% da altura da tela */
+      position: relative;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-      <a href="index.html" class="logo">GameVerse Hub</a>
+      <div class="logo-container">
+        <a href="index.html" class="logo">
+          <img src="images/gameversehub_logo.jpg" alt="GameVerse Hub Logo" class="logo-img">
+          GameVerse Hub
+        </a>
+      </div>
       <ul class="nav-menu">
         <li><a href="news.html">News & Releases</a></li>
         <li><a href="reviews.html">Reviews & Analyses</a></li>
         <li><a href="gallery.html" class="active">Media Gallery</a></li>
         <li><a href="contact.html">Contact & Community</a></li>
+        <li><a href="promotions.html">Promotions</a></li>
       </ul>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search topics: Nintendo, Sony, Microsoft...">
+        <button id="searchBtn">Search</button>
+      </div>
     </nav>
   </header>
 
   <main>
-    <h1>Media Gallery</h1>
-
-    <div class="gallery">
-      <!-- Exemplo de imagens com lazy loading -->
-      <figure>
-        <img src="images/sample1.jpg" alt="Screenshot 1" loading="lazy">
-        <figcaption>Screenshot 1</figcaption>
-      </figure>
-      <figure>
-        <img src="images/sample2.jpg" alt="Screenshot 2" loading="lazy">
-        <figcaption>Screenshot 2</figcaption>
-      </figure>
-      <figure>
-        <img src="images/sample3.jpg" alt="Screenshot 3" loading="lazy">
-        <figcaption>Screenshot 3</figcaption>
-      </figure>
-    </div>
-
-    <div class="gallery">
-      <!-- Exemplo de trailer/iframe com lazy loading -->
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/someTrailer" 
-        title="Game Trailer" 
-        frameborder="0" 
-        allowfullscreen 
-        loading="lazy">
-      </iframe>
-    </div>
+    <section class="media-gallery">
+      <h1>PS5 Pro Official Presentation</h1>
+      <p>Check out the official reveal of the PlayStation 5 Pro with stunning next-gen features.</p>
+      
+      <div class="video-container">
+        <!-- Substitua o link abaixo pela URL do vídeo de apresentação oficial -->
+        <iframe 
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="PS5 Pro Presentation"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+    <!-- Banner de consentimento de cookies (seu script.js irá gerenciar) -->
+    <div id="cookieConsent" class="cookie-consent">
+      <p>This website uses cookies to ensure you get the best experience.</p>
+      <button id="acceptCookies">Accept</button>
+    </div>
   </footer>
 
+  <!-- Script principal com suas funcionalidades -->
   <script src="js/script.js"></script>
 </body>
 </html>
