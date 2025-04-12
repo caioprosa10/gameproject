@@ -9,6 +9,7 @@
 }
 
 /* Reset e tipografia */
+/* Fonte inspirada no estilo Apple: utiliza -apple-system e outras fontes modernas */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,9 +17,9 @@
 }
 
 body {
-  /* Uso da fonte Italianne para efeito itálico/inclinado */
-  font-family: 'Italianno', cursive, 'Roboto', sans-serif;
-  font-style: italic;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Removemos o estilo itálico para um visual mais clean e profissional */
+  font-style: normal;
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
@@ -98,7 +99,7 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background: url('../images/hero-background.jpg') no-repeat center center/cover; /* Opcional: background com efeito parallax */
+  background: url('../images/hero-background.jpg') no-repeat center center/cover; /* opcional */
 }
 
 .hero h1 {
