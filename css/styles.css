@@ -1,20 +1,23 @@
 /*
-  Estilos inspirados em uma vibe "synthwave"/"vaporwave",
-  agora aproveitando referências do design clean do PS5:
-  - Layout centralizado com foco em produtos/console
-  - Cartões translúcidos que lembram o contraste do PS5 (branco/preto)
-  - Manutenção de gradiente roxo, rosa e ciano neon
-  - Tipografia com Oswald (títulos) e Roboto (corpo)
+  Estilos inspirados em um layout profissional e minimalista,
+  como o site da Apple:
+  - Fundo branco, tipografia limpa
+  - Destaques sutis em cinza ou azul discreto
+  - Espaçamento generoso
+  - Foco no produto: cartões com fundo branco e sombras sutis
 */
 
+/* Paleta de cores neutras */
 :root {
-  --primary-color: #ff0080;      /* Rosa neon */
-  --secondary-color: #05dfd7;    /* Ciano neon */
-  --bg-gradient-start: #2b0442;  /* Roxo profundo */
-  --bg-gradient-end: #7209b7;    /* Roxo mais claro */
-  --text-color: #fff;            /* Texto branco */
+  --primary-color: #007aff;       /* Azul discreto, como destaque */
+  --text-color: #333333;          /* Texto principal em tom de cinza-escuro */
+  --heading-color: #000000;       /* Títulos em preto */
+  --bg-color: #ffffff;            /* Fundo branco */
+  --border-color: #dddddd;        /* Bordas e divisões */
+  --secondary-bg-color: #f9f9f9;  /* Fundo de seções secundárias */
 }
 
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,24 +25,10 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+  font-family: 'Roboto', sans-serif; /* Você pode trocar para 'Helvetica', 'Arial', etc. */
+  background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
-  position: relative; /* Para possíveis elementos decorativos absolutos */
-}
-
-/* Exemplo de “faixa” sutil no background, lembrando curvas do PS5 */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.05); /* Camada clarinha */
-  transform: skewX(-15deg);
-  pointer-events: none;
 }
 
 /* Cabeçalho e barra de navegação */
@@ -48,17 +37,16 @@ body::before {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  position: relative; 
-  z-index: 10; /* Para ficar acima do pseudo-elemento do body */
+  border-bottom: 1px solid var(--border-color);
 }
 
 .logo {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald', sans-serif; /* Caso queira títulos mais marcantes */
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--heading-color);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -71,35 +59,36 @@ body::before {
   color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: background 0.3s;
-  text-transform: uppercase;
+  transition: color 0.3s;
+  font-weight: 500;
 }
 
-.nav-menu li a:hover, 
+.nav-menu li a:hover,
 .nav-menu li a.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
+  color: var(--primary-color);
 }
 
 /* Seção Hero */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
-  position: relative; 
-  z-index: 10;
+  padding: 4rem 1rem;
 }
 
 .hero h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--secondary-color);
-  letter-spacing: 2px;
+  color: var(--heading-color);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  color: #666666; /* Cinza mais claro para contraste */
 }
 
 .btn {
@@ -108,30 +97,29 @@ body::before {
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1.2rem;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
 }
 
 .btn:hover {
-  background-color: #d1006d;
+  background-color: #005bb5; /* Escurece um pouco o azul */
 }
 
 /* Conteúdo Dinâmico Geral */
 .dynamic-content {
   padding: 2rem;
-  position: relative; 
-  z-index: 10;
 }
 
 .dynamic-content h2 {
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
   font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
 }
 
-/* Conteiner de produtos/“cards” inspirado no layout PS5 */
+/* Cards de Produtos (inspirados no estilo clean da Apple) */
 .products-showcase {
   display: flex;
   flex-wrap: wrap;
@@ -141,53 +129,52 @@ body::before {
 }
 
 .product-card {
-  background: rgba(255, 255, 255, 0.1); /* Efeito translúcido */
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1.5rem;
   width: 250px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(255, 0, 128, 0.4); /* Rosa neon sutil */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .product-card img {
   max-width: 100%;
   border-radius: 4px;
   margin-bottom: 1rem;
-  border: 2px solid var(--secondary-color); /* Destaque ciano neon */
 }
 
 .product-card h3 {
   font-family: 'Oswald', sans-serif;
-  color: var(--secondary-color);
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .product-card p {
   margin-bottom: 1rem;
   line-height: 1.4;
+  color: #666666;
 }
 
-/* Seção de jogos ou vitrine de produtos em destaque */
-.games-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-/* Artigos de notícias e reviews */
+/* Seções de notícias / reviews */
 .news-article, .review {
-  background: rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   margin: 1rem 2rem;
   padding: 1rem;
-  position: relative; 
-  z-index: 10;
+}
+
+.news-article h3, .review h3 {
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+  font-family: 'Oswald', sans-serif;
 }
 
 /* Galeria de imagens e vídeos */
@@ -204,10 +191,9 @@ body::before {
   text-align: center;
 }
 
-.gallery img,
-.gallery iframe {
+.gallery img, .gallery iframe {
   max-width: 100%;
-  border: 2px solid var(--secondary-color);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
 }
 
@@ -222,43 +208,46 @@ form {
 
 form label {
   font-weight: bold;
+  margin-bottom: 0.25rem;
 }
 
-form input, 
-form textarea {
-  padding: 0.5rem;
-  border: 1px solid var(--secondary-color);
+form input, form textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: #fff;
   color: #000;
+  font-size: 1rem;
 }
 
 form button {
-  background-color: var(--secondary-color);
-  color: #000;
+  background-color: var(--primary-color);
+  color: #ffffff;
   font-weight: bold;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Oswald', sans-serif;
 }
 
-/* Comunidade / Área centralizada */
+form button:hover {
+  background-color: #005bb5;
+}
+
+/* Seção de comunidade / qualquer outra */
 .community {
   margin: 2rem;
   text-align: center;
-  position: relative; 
-  z-index: 10;
 }
 
 /* Rodapé */
 footer {
   text-align: center;
   padding: 1rem;
-  background: rgba(0,0,0,0.3);
+  background: var(--secondary-bg-color);
+  border-top: 1px solid var(--border-color);
   margin-top: 2rem;
-  position: relative; 
-  z-index: 10;
 }
 
 /* Modal */
@@ -271,34 +260,33 @@ footer {
   width: 100%; 
   height: 100%; 
   overflow: auto; 
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
-  background-color: #2b0442;
-  margin: 10% auto;
-  padding: 1rem;
-  border: 2px solid var(--primary-color);
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
   width: 80%;
   max-width: 800px;
-  position: relative;
   border-radius: 5px;
+  position: relative;
 }
 
 .close {
-  color: #fff;
+  color: #666666;
   float: right;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 15px;
-  line-height: 30px;
 }
 
 .close:hover {
-  color: var(--primary-color);
+  color: #000000;
 }
 
 /* Responsividade */
@@ -312,11 +300,6 @@ footer {
     font-size: 2rem;
   }
   
-  .games-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .products-showcase {
     flex-direction: column;
     align-items: center;
