@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact & Community - GameVerse Hub</title>
+  <meta name="description" content="Send us a message or join the GameVerse community">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="index.html" class="logo">GameVerse Hub</a>
+      <ul class="nav-menu">
+        <li><a href="news.html">News & Releases</a></li>
+        <li><a href="reviews.html">Reviews & Analyses</a></li>
+        <li><a href="gallery.html">Media Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact & Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact & Community</h1>
+    <form id="contactForm" action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <section class="community">
+      <h2>Join the Conversation</h2>
+      <p>You can leave comments or check out our forum (integration coming soon!).</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GameVerse Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
